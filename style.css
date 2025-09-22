@@ -84,7 +84,7 @@ nav ul li a {
   color: var(--text-on-dark);
 
   /* Background image (team photo) */
-  background: var(--brand-dark) center/fill no-repeat;
+  background: var(--brand-dark) center/cover no-repeat;
   background-image: image-set(
     url('assests/farra-sponsor.png') type("image/png") 1x
   );

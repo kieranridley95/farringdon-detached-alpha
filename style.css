@@ -86,7 +86,7 @@ nav ul li a {
   /* Background image (team photo) */
   background: var(--brand-dark) center/cover no-repeat;
   background-image: image-set(
-    url('assets/team.jpg') type("image/jpeg") 1x
+    url('assests/team.jpg') type("image/jpeg") 1x
   );
   /* Fallback if image fails to load */
   background-color: #1a1b20;

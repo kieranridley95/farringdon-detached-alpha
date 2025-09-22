@@ -6,6 +6,12 @@ body {
   color: #333;
 }
 
+logo {
+  height: 50px;
+  width: 50px;
+}
+
+
 header, footer {
   background: #d10e00;
   color: white;

@@ -61,3 +61,170 @@ nav ul li a {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+:root {
+  --brand-red: #cf1020;
+  --brand-dark: #111216;
+  --text-on-dark: #ffffff;
+  --text-muted: #d6d6d6;
+  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.35);
+  --radius-lg: 16px;
+  --radius-md: 10px;
+}
+
+/* Layout reset helpers */
+.hero * { box-sizing: border-box; }
+
+.hero {
+  position: relative;
+  min-height: clamp(360px, 65vh, 720px);
+  display: grid;
+  align-items: end;
+  padding: clamp(16px, 3vw, 40px);
+  color: var(--text-on-dark);
+
+  /* Background image (team photo) */
+  background: var(--brand-dark) center/cover no-repeat;
+  background-image: image-set(
+    url('assets/hero-team.jpg') type("image/jpeg") 1x
+  );
+  /* Fallback if image fails to load */
+  background-color: #1a1b20;
+}
+
+/* Soft gradient to ensure readable text */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0,0,0,0.65) 100%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  max-width: min(720px, 92vw);
+  margin: 0;
+  z-index: 1;
+  padding: clamp(12px, 2vw, 20px) clamp(14px, 2.5vw, 24px);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(4px);
+  background: linear-gradient( to top right, rgba(0,0,0,0.55), rgba(0,0,0,0.25) );
+  box-shadow: var(--shadow-lg);
+}
+
+.hero__kicker {
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 6px 0;
+  font-size: clamp(12px, 1.6vw, 14px);
+  text-transform: uppercase;
+}
+
+.hero__title {
+  font-size: clamp(28px, 6vw, 52px);
+  line-height: 1.05;
+  margin: 0 0 10px 0;
+}
+
+.hero__sub {
+  margin: 0 0 16px 0;
+  font-size: clamp(14px, 2.2vw, 18px);
+  color: #f0f0f0;
+  max-width: 60ch;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, color 120ms ease;
+  white-space: nowrap;
+}
+
+.btn:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  background: var(--brand-red);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(207, 16, 32, 0.35);
+}
+
+.btn--primary:hover { transform: translateY(-1px); }
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Inset image bottom-right */
+.hero__inset {
+  position: absolute;
+  right: clamp(12px, 3vw, 32px);
+  bottom: clamp(12px, 3vw, 32px);
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid rgba(255,255,255,0.85);
+  background: #fff;
+}
+
+.hero__inset img {
+  display: block;
+  width: clamp(180px, 26vw, 320px);
+  height: auto;
+}
+
+/* Mobile tweaks */
+@media (max-width: 680px) {
+  .hero {
+    align-items: end;
+    padding-bottom: clamp(18px, 6vw, 28px);
+  }
+
+  .hero__content {
+    background: linear-gradient( to top right, rgba(0,0,0,0.6), rgba(0,0,0,0.35) );
+  }
+
+  .hero__inset {
+    position: static;
+    margin-top: 12px;
+    border: 1px solid rgba(255,255,255,0.65);
+  }
+
+  .hero__inset img {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}

@@ -1,7 +1,6 @@
-// Mobile nav toggle
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  document.querySelector('nav ul').classList.toggle('show');
-});
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-bar ul');
 
-// Dynamic year
-document.getElementById('year').textContent = new Date().getFullYear();
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});

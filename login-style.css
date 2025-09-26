@@ -1,0 +1,121 @@
+﻿/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Background animation */
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #ff0000 50%, #000000 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+/* Login box */
+.login-container {
+    position: relative;
+    width: 350px;
+    margin: 100px auto;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    color: #fff;
+    text-align: center;
+}
+
+    .login-container h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #fff;
+    }
+
+/* Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+    .login-form input {
+        margin: 10px 0;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .login-form button {
+        margin-top: 15px;
+        padding: 12px;
+        background: rgb(128, 128, 128);
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .login-form button:hover {
+            background: #ff0000;
+        }
+
+.signup-text {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+    .signup-text a {
+        color: #ff0000;
+        text-decoration: none;
+    }
+
+        .signup-text a:hover {
+            text-decoration: underline;
+        }
+
+/* Logo styling */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+    .logo img {
+        max-width: 120px; /* adjust size */
+        height: auto;
+    }

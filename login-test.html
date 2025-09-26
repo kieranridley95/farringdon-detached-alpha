@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login-style.css" />
+</head>
+<body>
+    <!-- Animated Background Layers -->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="logo">
+            <img src="assests/farringdon_crest.png" alt="site-logo" />
+        </div>
+        <h1>Welcome Back</h1>
+        <!-- Change your form element -->
+        <form id="loginForm" class="login-form" onsubmit="return false;">
+            <input id="username" type="text" placeholder="Username" required>
+            <input id="password" type="password" placeholder="Password" required>
+            <button id="loginBtn" type="submit">Login</button>
+            <p class="signup-text">Don’t have an account? <a href="#">Sign up</a></p>
+        </form>
+
+        <script>
+document.getElementById('loginBtn').addEventListener('click', function (e) {
+  const u = document.getElementById('username').value.trim();
+  const p = document.getElementById('password').value;
+
+  // simple check
+  if (u === 'admin' && p === 'admin') {
+    // redirect to index.html
+    window.location.href = 'index.html';
+  } else {
+    alert('Invalid username or password');
+  }
+});
+        </script>
+
+    </div>
+</body>
+</html>

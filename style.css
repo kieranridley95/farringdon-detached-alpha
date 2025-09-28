@@ -468,46 +468,57 @@ header{
 }
 
 
-
-
-
 .formation {
-  background: #0b6623;
-  color: white;
-  padding: 2rem;
-  text-align: center;
+    background: #d10e00;
+    background-size: cover;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
 }
 
+
 .field {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* space between rows */
+    align-items: center; /* center rows horizontally */
+    margin-top: 2rem;
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* center players in each row */
+    gap: 1.5rem; /* space between players */
 }
 
 .player {
-  background: white;
-  color: #111;
-  border-radius: 50%;
-  padding: 1rem;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background: white;
+    color: #111;
+    border-radius: 50%;
+    width: 80px; /* fixed size for better formation look */
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .player:hover {
-  transform: scale(1.1);
-  background: var(--brand-red);
-  color: white;
-}
+        transform: scale(1.1);
+        background: var(--brand-red);
+        color: white;
+    }
 
 .player span {
-  font-weight: bold;
-  font-size: 1.2rem;
-  display: block;
-}
+        font-weight: bold;
+        font-size: 1.2rem;
+        display: block;
+    }
 
 /* Profile overlay */
 .profile-overlay {
@@ -598,18 +609,98 @@ header{
     font-family: 'Segoe UI', sans-serif;
     padding: 20px;
     text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 
+#footerPixels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* stay behind content */
+}
+
+.footer * {
+    position: relative;
+    z-index: 1; /* bring content above pixels */
+}
+
+/* Top section of footer */
 .footer-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex: 1 1 300px;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* adds horizontal space between icons */
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
-.footer-logo img {
-    max-width: 100px;
+    .footer-logo img {
+        max-width: 100px;
+        height: auto;
+        padding: 5px; /* optional: adds space inside each image box */
+        transition: transform 0.3s ease;
+    }
+
+
+        /* Optional hover effect */
+        .footer-logo img:hover {
+            transform: scale(1.05);
+        }
+
+
+
+
+.footer-sponsors,
+.footer-main-sponsors {
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .footer-sponsors p,
+    .footer-main-sponsors p {
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+.sponsor-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 10px 0;
+}
+
+.footer-sponsors img,
+.footer-main-sponsors img {
+    max-height: 100px;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+/*  Mobile-first tweak */
+@media (max-width: 600px) {
+    .footer-sponsors img,
+    .footer-main-sponsors img {
+        max-height: 60px; /* shrink logos */
+        margin: 5px; /* tighter spacing */
+    }
+
+    .sponsor-row {
+        gap: 20px; /* less gap on small screens */
+    }
 }
 
 
@@ -622,6 +713,7 @@ header{
     font-weight: bold;
 }
 
+
     .footer-links a {
         color: #fff;
         text-decoration: none;
@@ -629,14 +721,14 @@ header{
     }
 
         .footer-links a:hover {
-            text-decoration: underline;
+            text-decoration: underline;      
         }
 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #244061;
+    border-top: 1px solid #d10e00;
     padding-top: 15px;
     margin-top: 15px;
     flex-wrap: wrap;
@@ -650,10 +742,17 @@ header{
 
 .footer-icons {
     display: flex;
-    gap: 20px;
-    font-size: 18px;
-    color: #00b4ff; /* sky blue like Man City */
+    gap: 20px; /* space between icons */
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
 }
+
+    .footer-icons img {
+        height: 50px;
+        width: 50px;
+        display: block; /* keep them inline-block inside flex */
+    }
+
 
 .back-top {
     font-size: 13px;
@@ -687,4 +786,64 @@ header{
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .btn { transition: none; }
+}
+
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+    .formation {
+        padding: 1.5rem 1rem;
+    }
+
+    .field {
+        gap: 1.5rem;
+    }
+
+    .row {
+        gap: 1rem;
+        flex-wrap: wrap; /* allows players to wrap if too many in a row */
+    }
+
+    .player {
+        width: 70px;
+        height: 70px;
+    }
+
+        .player span {
+            font-size: 1rem;
+        }
+
+        .player p {
+            font-size: 0.8rem;
+        }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .formation {
+        padding: 1rem 0.5rem;
+    }
+
+    .field {
+        gap: 1rem;
+    }
+
+    .row {
+        gap: 0.8rem;
+        flex-wrap: wrap; /* ensures players don’t overflow on small screens */
+    }
+
+    .player {
+        width: 60px;
+        height: 60px;
+        padding: 0.4rem;
+    }
+
+        .player span {
+            font-size: 0.9rem;
+        }
+
+        .player p {
+            font-size: 0.7rem;
+        }
 }

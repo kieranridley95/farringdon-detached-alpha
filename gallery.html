@@ -1,20 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Farringdon U12s</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="gallery-style.css"/>
+    <link rel="stylesheet" href="gallery-style.css" />
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <img src="assets/farringdon_crest.png" alt="Farringdon U12s Logo" />
+                <img src="assests/farringdon_crest.png" alt="Farringdon U12s Logo" />
+                <img src="assests/swimcity-bw.png" alt="SwimCity Logo" />
+                <img src="assests/twj-bw.png" alt="TW Joinery Logo" />
             </div>
-            <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="fixtures.html">Fixtures</a></li>
@@ -25,6 +26,7 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="join.html">Join Us</a></li>
             </ul>
+            <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         </nav>
     </header>
 
@@ -35,26 +37,25 @@
             <p class="gallery-sub">Snapshots from our journey — matchdays, training, and team pride.</p>
 
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="gallery/1 (1).JPG" alt="Freddie MOTM" />
+                <a href="wearside-home-gallery.html" class="gallery-item">
+                    <img src="Wearside/1 (3).jpg" alt="Freddie MOTM" />
                     <div class="caption">Farringdon Vs Wearside FC</div>
-                    <a href="test.html">View Album</a>
-                </div>
+                </a>
 
-                <div class="gallery-item">
-                    <img src="gallery/1 (1).jpg" alt="Freddie MOTM" />
+                <a href="test2.html" class="gallery-item">
+                    <img src="gallery/1 (2).jpg" alt="Freddie MOTM" />
                     <div class="caption">West Rainton YFC Vs Farringdon</div>
-                    <a href="test2.html">View Album</a>
-                </div>
+                </a>
 
-                <div class="gallery-item">
-                    <img src="gallery/1 (1).jpg" alt="Freddie MOTM" />
+                <a href="test.html" class="gallery-item">
+                    <img src="gallery/1 (2).jpg" alt="Freddie MOTM" />
                     <div class="caption">Farringdon Vs Wrekenton Nou Camp Reds</div>
-                    <a href="test.html">View Album</a>
-                </div>
+                </a>
 
-             
-
+                <a href="1.html" class="gallery-item">
+                    <img src="assests/farringdon_crest.png" alt="WhickhamHome" />
+                    <div class="caption">Farringdon Vs Whickham (PHOTOS COMING SOON)</div>
+                </a>
                 <!-- Add more images as needed -->
             </div>
         </section>
@@ -65,9 +66,6 @@
         <p>&copy; <span id="year"></span> Farringdon Detached U12s. Built by Kieran Ridley.</p>
     </footer>
 
-    <!-- Optional: Script to auto-fill year -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

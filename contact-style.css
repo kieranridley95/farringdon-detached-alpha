@@ -1,0 +1,60 @@
+﻿.contact-us {
+    background: #fff;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #4d0000;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(179, 0, 0, 0.1);
+}
+
+.contact-us h2 {
+    text-align: center;
+    color: #b30000;
+    margin-bottom: 30px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #800000;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ffcccc;
+    border-radius: 4px;
+    background: #fffafa;
+    font-size: 1rem;
+}
+
+    form input:focus,
+    form textarea:focus {
+        border-color: #cc0000;
+        outline: none;
+    }
+
+button[type="submit"] {
+    background-color: #cc0000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button[type="submit"]:hover {
+        background-color: #990000;
+    }

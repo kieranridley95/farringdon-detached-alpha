@@ -1,0 +1,55 @@
+﻿.about-us {
+    background: #fff5f5;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #4d0000;
+}
+
+    .about-us .container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .about-us h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #b30000;
+    }
+
+    .about-us h3 {
+        font-size: 1.5rem;
+        margin-top: 40px;
+        color: #cc0000;
+    }
+
+    .about-us .intro {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .about-us ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+        .about-us ul li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+            .about-us ul li::before {
+                content: "❤️";
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+    .about-us .cta {
+        background: #ffe6e6;
+        padding: 20px;
+        border-left: 5px solid #ff3333;
+        margin-top: 40px;
+        border-radius: 5px;
+    }

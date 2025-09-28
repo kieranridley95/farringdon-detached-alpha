@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farringdon U12s</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <img src="assests/farringdon_crest.png" alt="Farringdon U12s Logo" />
+                <img src="assests/swimcity-bw.png" alt="SwimCity Logo" />
+                <img src="assests/twj-bw.png" alt="TW Joinery Logo" />
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fixtures.html">Fixtures</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li><a href="squad.html">Squad</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html">Join Us</a></li>
+            </ul>
+            <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+        </nav>
+    </header>
+
+    <section class="team-intro">
+        <h2>Meet Our Team</h2>
+        <p class="team-sub">Our talented squad of young footballers representing Farringdon Detached in RFYL Division 9.</p>
+
+        <div class="team-stats">
+            <div class="stat-box">
+                <span class="stat-icon">⚽</span>
+                <p><strong>14</strong> Players</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-icon">🥅</span>
+                <p><strong>3</strong> Total Goals</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-icon">🏆</span>
+                <p><strong>RFYL DIV</strong> 9</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-icon">📅</span>
+                <p><strong>2025–2026</strong> Season</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="formation">
+        <h2>Team Formation</h2>
+        <h3>Goal Keeper</h3>
+        <div class="field">
+            <!-- Goalkeeper -->
+            <div class="row goalkeeper">
+                <div class="player" data-player="finley"><span>1</span><p>Finley</p></div>
+            </div>
+
+            <h3>DEFENDERS</h3>
+            <!-- Defenders -->
+            <div class="row defenders">
+                <div class="player" data-player="bradley"><span>8</span><p>Bradley</p></div>
+                <div class="player" data-player="keaton"><span>4</span><p>Kaeton</p></div>
+                <div class="player" data-player="freddie"><span>5</span><p>Freddie</p></div>
+                <div class="player" data-player="oliver"><span>11</span><p>Oliver</p></div>
+                <div class="player" data-player="lucas"><span>6</span><p>Lucas</p></div>
+            </div>
+
+            <h3>MIDFEILDERS</h3>
+            <!-- Midfielders -->
+            <div class="row midfielders">
+                <div class="player" data-player="david"><span>7</span><p>David</p></div>
+                <div class="player" data-player="jensen"><span>3</span><p>Jensen</p></div>
+                <div class="player" data-player="joseph"><span>12</span><p>Joseph</p></div>
+                <div class="player" data-player="jenson"><span>16</span><p>Jenson</p></div>
+            </div>
+
+            <h3>FORWARDS</h3>
+            <!-- Forwards -->
+            <div class="row forwards">
+                <div class="player" data-player="dawson"><span>9</span><p>Dawson</p></div>
+                <div class="player" data-player="tyler"><span>10</span><p>Tyler</p></div>
+                <div class="player" data-player="sonny"><span>18</span><p>Sonny</p></div>
+                <div class="player" data-player="joey"><span>14</span><p>Joey</p></div>
+            </div>
+
+        </div>
+
+        <!-- Profile Cards -->
+        <div class="profile-overlay" id="profile-overlay">
+            <div class="profile-card" id="profile-card">
+                <img src="" alt="" class="profile-img" />
+                <h3 id="profile-name"></h3>
+                <p id="profile-desc"></p>
+                <div class="stats" id="profile-stats"></div>
+                <button class="close-profile">Close</button>
+            </div>
+        </div>
+
+        <div class="bio-overlay" id="bio-overlay">
+            <div class="bio-card">
+                <h3 id="bio-name"></h3>
+                <p id="bio-text"></p>
+                <button class="close-bio">Close</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <canvas id="footerPixels"></canvas>
+        <div class="footer-top">
+            <div class="footer-logo">
+                <a href="index.html" target="_blank" rel="noopener">
+                    <img src="assests/russell-foster.png" />
+                </a>
+                <a href="index.html" target="_blank" rel="noopener">
+                    <img src="assests/farringdon_crest.png" href="index.html" alt="Logo">
+                </a>
+                <a href="index.html" target="_blank" rel="noopener">
+                    <img src="assests/durham-fa.png" />
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-main-sponsors">
+            <p>MATCH SHIRT SPONSORS</p>
+            <div class="footer-main-sponsors-row">
+                <img src="sponsor-icons/swimcity-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/tw-red.png" alt="swim-city-bw">
+            </div>
+        </div>
+
+        <div class="footer-sponsors">
+            <p>PLAYER SPONSORS</p>
+            <div class="footer-sponsors-row">
+                <img src="sponsor-icons/wrays-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/db-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/tww-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/bh-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/al-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/cab-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/sm-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/wa-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/tan-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/apex-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/mte-red.png" alt="swim-city-bw">
+                <img src="sponsor-icons/ww-red.png" alt="swim-city-bw">
+            </div>
+        </div>
+        <br />
+
+
+        <div class="footer-links">
+            <a href="#">POLOCIES</a>
+            <a href="#">FORMS</a>
+            <a href="#">DOCUMENTS</a>
+            <a href="#">CONTACT US</a>
+            <a href="#">SITEMAP</a>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="#">Fan Support</a>
+
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/profile.php?id=100093292422478" target="_blank" rel="noopener">
+                    <img src="icons/social-facebook-solid.png" alt="Facebook" />
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                    <img src="icons/social-instagram-solid.png" alt="Instagram" />
+                </a>
+                <a href="https://www.farringdondetachedfc.co.uk" target="_blank" rel="noopener">
+                    <img src="icons/globe-farringdon-solid.png" alt="Instagram" />
+                </a>
+            </div>
+
+            <a href="index.html" class="back-top">Back to the top ↑</a>
+        </div>
+
+
+        <div class="footer-copy">
+            © Farringdon Detached FC Ltd 2025
+            <br />
+            <p>Created By Kieran Ridley</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="formation.js"></script>
+</body>
+</html>

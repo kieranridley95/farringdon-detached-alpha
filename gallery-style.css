@@ -1,4 +1,4 @@
-﻿html, body {
+html, body {
     height: 100%;
     margin: 0;
     display: flex;
@@ -57,9 +57,10 @@ main {
 
     .gallery-item img {
         width: 100%;
-        height: auto;
-        display: block;
+        height: 200px; /* or whatever height suits your layout */
+        object-fit: cover;
     }
+
 
 .caption {
     position: absolute;

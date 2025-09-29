@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whickham Fellside Photo Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #000;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Header link */
+        a {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #d10e00;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            a:hover {
+                background-color: #444;
+            }
+
+        /* Gallery grid */
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+            #gallery img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                cursor: pointer;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+                #gallery img:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+                }
+
+        /* Lightbox overlay */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+        }
+
+            #lightbox img {
+                max-width: 90%;
+                max-height: 80%;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            }
+
+        /* Arrows */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: white;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+            .arrow.left {
+                left: 20px;
+            }
+
+            .arrow.right {
+                right: 20px;
+            }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            a {
+                margin: 10px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            #gallery {
+                padding: 10px;
+                gap: 10px;
+            }
+
+            @media (hover: none) {
+                #gallery img:hover {
+                    transform: none;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">Return Home</a>
+    <a href="gallery.html">View Gallery</a>
+    <a href="#" onclick="loadImages()">View Photos</a>
+
+    <div id="gallery"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="arrow left" onclick="prevImage()">&#10094;</span>
+        <img id="lightbox-img" src="" alt="Large View" />
+        <span class="arrow right" onclick="nextImage()">&#10095;</span>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        let totalImages = 38; // 👈 Adjust this number
+
+        function loadImages() {
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = '';
+            for (let i = 1; i <= totalImages; i++) {
+                const img = document.createElement('img');
+                img.src = `whickhamfellside/1 (${i}).jpg`;
+                img.alt = `Image ${i}`;
+                img.onclick = () => openLightbox(i);
+                gallery.appendChild(img);
+            }
+        }
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox-img').src = `whickhamfellside/1 (${index}).jpg`;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex % totalImages) + 1;
+            openLightbox(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 2 + totalImages) % totalImages + 1;
+            openLightbox(currentIndex);
+        }
+
+        // Swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+        const lightbox = document.getElementById('lightbox');
+
+        lightbox.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        lightbox.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) {
+                nextImage(); // swipe left
+            } else if (endX - startX > 50) {
+                prevImage(); // swipe right
+            }
+        });
+    </script>
+</body>
+</html>

@@ -13,7 +13,7 @@ const playerData = {
     finley: {
         name: "#1 — Goalkeeper",
         desc: "Quick reflexes and strong leadership from the back.",
-        bio: "Finley joined Farringdon back in 2023",
+        bio: "Finley joined Farringdon back in 2023, His development as a keeper has been tremendous, pulling off some of the most unbelievable saves between the sticks has been reflected by his development. ",
         img: "icons/finley-icon.png",
         stats: {
             Appearences: 4,
@@ -87,7 +87,7 @@ const playerData = {
         bio: "Lucas joined Farringdon midway through our 24/25 Season, There is something special about Lucas that shows on the pitch on a matchday, he will give 100% always, with lots of pace and strength his a solid option for leftback and multiple possitions this season, he is improving week-in week-out noticed by the coaches",
         img: "icons/lucas-icon.png",
         stats: {
-            Appearences: 0,
+            Appearences: 4,
             Goals: 0,
             Assists: 0,
             "Man of the Match": 1,
@@ -237,3 +237,4 @@ closeBtn.addEventListener('click', () => {
 closeBio.addEventListener('click', () => {
     bioOverlay.classList.remove('active');
 });
+

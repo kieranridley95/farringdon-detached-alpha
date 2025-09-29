@@ -159,7 +159,7 @@
             gallery.innerHTML = '';
             for (let i = 1; i <= totalImages; i++) {
                 const img = document.createElement('img');
-                img.src = `wearside/1 (${i}).jpg`;
+                img.src = `Wearside/1 (${i}).jpg`;
                 img.alt = `Image ${i}`;
                 img.onclick = () => openLightbox(i);
                 gallery.appendChild(img);
@@ -168,7 +168,7 @@
 
         function openLightbox(index) {
             currentIndex = index;
-            document.getElementById('lightbox-img').src = `wearside/1 (${index}).jpg`;
+            document.getElementById('lightbox-img').src = `Wearside/1 (${index}).jpg`;
             document.getElementById('lightbox').style.display = 'flex';
         }
 
@@ -206,3 +206,4 @@
     </script>
 </body>
 </html>
+

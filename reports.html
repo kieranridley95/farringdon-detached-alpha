@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Farringdon U12s</title>
     <link rel="stylesheet" href="style.css" />
+    <liml rel="stylesheet" href="reportStyle.css" />
 </head>
 <body>
     <!-- Header -->
@@ -30,39 +31,17 @@
         </nav>
     </header>
 
-    <section class="grid">
-        <!-- Sponsor Spotlight -->
-        <div class="card">
-            <h3>Match Report</h3>
-            <img src="assests/tw-joinery.png" alt="Sponsor Logo" class="logo" />
-            <p>We are proud to be supported by <strong>TW Joinery</strong>, offering their expertise in all joinery services.</p>
-            <a href="https://example.com" target="_blank" class="btn">Visit Sponsor</a>
-        </div>
-
-        <div class="card">
-            <h3>Sponsor Spotlight</h3>
-            <img src="assests/swimcity.png" alt="Sponsor Logo" class="logo" />
-            <p>We are proud to be supported by <strong>Swim City</strong>, offering lessons for all ages.</p>
-            <a href="https://example.com" target="_blank" class="btn">Visit Sponsor</a>
-        </div>
+  <main>
+    <section class="report-buttons">
+      <button id="report1" onclick="loadReport(this.id)">Sunderland Juniors</button>
+      <button id="report2" onclick="loadReport(this.id)">Durham Dynamos</button>
+      <button id="report3" onclick="loadReport(this.id)">Newcastle Falcons</button>
     </section>
 
-    <main>
-        <section class="report-buttons">
-            <button id="report1" onclick="loadReport(this.id)">test</button>
-        </section>
-
-        <section id="reportContainer" class="report-display">
-            <p>Select a match to view the report.</p>
-        </section>
-    </main>
-
-
-
-
-
-
-
+    <section id="reportContainer" class="report-display">
+      <p>Select a match to view the report.</p>
+    </section>
+  </main>
 
 
     <!-- Include footer -->

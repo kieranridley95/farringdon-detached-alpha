@@ -1,5 +1,10 @@
 const reportMap = {
     report1: 'match-reports/test.txt',
+    report2: 'match-reports/whickham-home.txt',
+    report3: 'match-reports/wrekenton-home.txt',
+    report4: 'match-reports/westrainton-away.txt',
+    report5: 'match-reports/wearside-home.txt'
+
 };
 
 function loadReport(buttonId) {
@@ -20,4 +25,5 @@ function loadReport(buttonId) {
         .catch(error => {
             document.getElementById('reportContainer').innerText = 'Error: ' + error.message;
         });
+
 }

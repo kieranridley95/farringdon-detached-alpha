@@ -1,0 +1,40 @@
+@media screen and (max-width: 768px) {
+    header {
+        padding: 0.75rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        nav a {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+    .report-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1.5rem 0;
+    }
+
+        .report-buttons button {
+            width: 90%;
+            max-width: 300px;
+            font-size: 1rem;
+        }
+
+    .report-display {
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 0.95rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+}

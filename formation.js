@@ -28,11 +28,11 @@ const playerData = {
     bradley: {
         name: "#8 — Right Back",
         desc: "Sharp instincts, brilliant defending and a powerful shot. Always a threat in the final third.",
-        bio: "Bradley joined Farringdon late into our 2024/25 Season, At the time our squad was rather full but as soon as he turned up for training hi's quality and experience proved he had something to offer to the team",
+        bio: "Bradley joined Farringdon late into our 2024/25 Season. At the time our squad was rather full but as soon as he turned up for training hi's quality and experience proved he had something to offer to the team",
         img:  "icons/bradley-icon.png",
         stats: {
-            Appearences: 4,
-            Goals: 2,
+            Appearences: 5,
+            Goals: 4,
             Assists: 0,
             "Man of the Match": 1,
             "Parents’ Player": 1
@@ -46,9 +46,9 @@ const playerData = {
         img: "icons/keaton-icon.png",
         stats: {
             Appearences: 2,
-            Goals: 0,
+            Goals: 1,
             Assists: 0,
-            "Man of the Match": 0,
+            "Man of the Match": 1,
             "Parents’ Player": 0
         }
     },
@@ -63,7 +63,7 @@ const playerData = {
             Goals: 0,
             Assists: 0,
             "Man of the Match": 1,
-            "Parents’ Player": 0
+            "Parents’ Player": 1
         }
     },
 
@@ -102,8 +102,8 @@ const playerData = {
         img: "icons/david-icon.png",
         stats: {
             Appearences: 4,
-            Goals: 0,
-            Assists: 0,
+            Goals: 2,
+            Assists: 1,
             "Man of the Match": 0,
             "Parents’ Player": 1
         }
@@ -129,7 +129,7 @@ const playerData = {
         bio: "Our mini Messi, Joseph joined Farringdon in Janauary 2025, his a fantastic winger with plenty of skillfull tricks up his sleeve has proved to be a defenders nightmare, his a solid player who has developed rapidly over the months since he joined",
         img: "icons/joseph-icon.png",
         stats: {
-            Appearences: 4,
+            Appearences: 5,
             Goals: 0,
             Assists: 0,
             "Man of the Match": 0,
@@ -171,7 +171,7 @@ const playerData = {
         bio:"Tyler has been at Farringdon since 2021, his devlopment has been fantastic, leadership on the pitch and quality and experience he offers to the team has helped bring players on into the team. With a few goals and assists last season he was nominated our parents player of the season",
         img: "icons/tyler-icon.png",
         stats: {
-            Appearences: 4,
+            Appearences: 5,
             Goals: 1,
             Assists: 0,
             "Man of the Match": 0,
@@ -200,7 +200,7 @@ const playerData = {
         img: "icons/joey-icon.png",
         stats: {
             Appearences: 2,
-            Goals: 1,
+            Goals: 3,
             Assists: 1,
             "Man of the Match": 0,
             "Parents’ Player": 1
@@ -237,4 +237,5 @@ closeBtn.addEventListener('click', () => {
 closeBio.addEventListener('click', () => {
     bioOverlay.classList.remove('active');
 });
+
 

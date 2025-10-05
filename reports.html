@@ -31,14 +31,34 @@
         </nav>
     </header>
 
+  <br />
   <main>
- <section class="report-buttons">
-     <button id="report1" onclick="loadReport(this.id)">Willington Match Report</button>
-     <button id="report2" onclick="loadReport(this.id)">Whickham Match Report</button>
-     <button id="report3" onclick="loadReport(this.id)">Wrekenton Match Report</button>
-     <button id="report4" onclick="loadReport(this.id)">Westrainton Match Report</button>
-     <button id="report5" onclick="loadReport(this.id)">Wearside Match Report</button>
- </section>
+      <section class="report-cards">
+          <div class="report-card">
+              <img src="crests/willington-crest.jpg" alt="Willington Crest" class="team-crest">
+              <button id="report1" onclick="loadReport(this.id)">Willington Match Report</button>
+          </div>
+          <div class="report-card">
+              <img src="crests/whickham-crest.jpg" alt="Whickham Crest" class="team-crest">
+              <button id="report2" onclick="loadReport(this.id)">Whickham Match Report</button>
+          </div>
+          <div class="report-card">
+              <img src="crests/wrekenton-crest.jpg" alt="Wrekenton Crest" class="team-crest">
+              <button id="report3" onclick="loadReport(this.id)">Wrekenton Match Report</button>
+          </div>
+          <div class="report-card">
+              <img src="crests/westrainton-crest.jpg" alt="Westrainton Crest" class="team-crest">
+              <button id="report4" onclick="loadReport(this.id)">Westrainton Match Report</button>
+          </div>
+          <div class="report-card">
+              <img src="crests/wearside-crest.png" alt="Wearside Crest" class="team-crest">
+              <button id="report5" onclick="loadReport(this.id)">Wearside Match Report</button>
+          </div>
+      </section>
+      <br />
+      <section id="reportContainer" class="report-display">
+          <p>Select a match to view the report.</p>
+      </section>
 
     <section id="reportContainer" class="report-display">
       <p>Select a match to view the report.</p>

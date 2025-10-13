@@ -3,7 +3,8 @@ const reportMap = {
     report2: 'match-reports/whickham-home.txt',
     report3: 'match-reports/wrekenton-home.txt',
     report4: 'match-reports/westrainton-away.txt',
-    report5: 'match-reports/wearside-home.txt'
+    report5: 'match-reports/wearside-home.txt',
+    report6: 'match-reports/birtley-home.txt'
 
 };
 
@@ -27,3 +28,4 @@ function loadReport(buttonId) {
         });
 
 }
+

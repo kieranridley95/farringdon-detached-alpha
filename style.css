@@ -246,6 +246,13 @@ header{
   height: auto;
 }
 
+    .hero__inset video {
+        display: block;
+        width: clamp(180px, 26vw, 320px);
+        height: auto;
+        border-radius: var(--radius-md);
+        object-fit: cover;
+    }
 
 
 .news-section {
@@ -390,30 +397,37 @@ header{
 
 /* Mobile tweaks */
 @media (max-width: 680px) {
-  .hero {
-    align-items: end;
-    padding-bottom: clamp(18px, 6vw, 28px);
-  }
-
-  .hero__content {
-    background: linear-gradient( to top right, rgba(0,0,0,0.6), rgba(0,0,0,0.35) );
-  }
-
-  .hero__inset {
-    position: static;
-    margin-top: 12px;
-    border: 1px solid rgba(255,255,255,0.65);
-  }
-
-  .hero__inset img {
-    width: 100%;
-    max-width: 420px;
-  }
-
-  .hero__inset {
-            display: none;
-        }
+    .hero {
+        align-items: end;
+        padding-bottom: clamp(18px, 6vw, 28px);
     }
+
+    .hero__content {
+        background: linear-gradient(to top right, rgba(0,0,0,0.6), rgba(0,0,0,0.35));
+    }
+
+    .hero__inset {
+        position: static;
+        margin-top: 12px;
+        border: 1px solid rgba(255,255,255,0.65);
+        display: block; /* Ensure it's visible */
+        width: 100%;
+        max-width: 420px;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        background: #fff;
+    }
+
+        .hero__inset img,
+        .hero__inset video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+        }
+}
 
 
 
@@ -602,6 +616,7 @@ header{
     border-radius: var(--radius-md);
     cursor: pointer;
 }
+
 
 .footer {
     background: #222222; /* dark red */
@@ -847,8 +862,6 @@ header{
             font-size: 0.7rem;
         }
 }
-
-
 /* Match Report Buttons */
 .report-buttons {
     text-align: center;

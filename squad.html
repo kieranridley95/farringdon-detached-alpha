@@ -58,42 +58,64 @@
 
 
 
-        <section class="squad-switcher" aria-labelledby="squad-switcher-title">
-            <div class="squad-switcher__heading">
-                <p class="squad-switcher__eyebrow">2025–2026 season</p>
-                <h2 id="squad-switcher-title">Meet the squad</h2>
-                <p>Select a player to view their team profile and season stats.</p>
+    <section class="formation">
+        <h2>Team Formation</h2>
+        <h3>Goal Keeper</h3>
+        <div class="field">
+            <!-- Goalkeeper -->
+            <div class="row goalkeeper">
+                <div class="player" data-player="finley"><span>1</span><p>Finley</p></div>
             </div>
 
-            <div class="squad-switcher__filters" role="tablist" aria-label="Filter the squad by position">
-                <button class="squad-filter is-active" type="button" data-filter="all" role="tab" aria-selected="true">All players</button>
-                <button class="squad-filter" type="button" data-filter="gk" role="tab" aria-selected="false">Goalkeepers</button>
-                <button class="squad-filter" type="button" data-filter="def" role="tab" aria-selected="false">Defenders</button>
-                <button class="squad-filter" type="button" data-filter="mid" role="tab" aria-selected="false">Midfielders</button>
-                <button class="squad-filter" type="button" data-filter="fwd" role="tab" aria-selected="false">Forwards</button>
+            <h3>DEFENDERS</h3>
+            <!-- Defenders -->
+            <div class="row defenders">
+                <div class="player" data-player="bradley"><span>8</span><p>Bradley</p></div>
+                <div class="player" data-player="keaton"><span>4</span><p>Kaeton</p></div>
+                <div class="player" data-player="freddie"><span>5</span><p>Freddie</p></div>
+                <div class="player" data-player="oliver"><span>11</span><p>Oliver</p></div>
+                <div class="player" data-player="lucas"><span>6</span><p>Lucas</p></div>
             </div>
 
-            <div class="squad-switcher__layout">
-                <div class="squad-roster" id="squad-roster" aria-label="Player roster"></div>
+            <h3>MIDFEILDERS</h3>
+            <!-- Midfielders -->
+            <div class="row midfielders">
+                <div class="player" data-player="david"><span>7</span><p>David</p></div>
+                <div class="player" data-player="jensen"><span>3</span><p>Jensen</p></div>
+                <div class="player" data-player="joseph"><span>12</span><p>Joseph</p></div>
+                <div class="player" data-player="jenson"><span>16</span><p>Jenson</p></div>
+            </div>
 
-                <article class="squad-feature" aria-live="polite">
-                    <div class="squad-feature__image-wrap">
-                        <img id="squad-player-image" src="icons/finley-icon.png" alt="Finley" />
-                        <span id="squad-player-number" class="squad-feature__number">1</span>
-                    </div>
-                    <p id="squad-player-position" class="squad-feature__position">Goalkeeper</p>
-                    <h3 id="squad-player-name">Finley</h3>
-                </article>
+            <h3>FORWARDS</h3>
+            <!-- Forwards -->
+            <div class="row forwards">
+                <div class="player" data-player="dawson"><span>9</span><p>Dawson</p></div>
+                <div class="player" data-player="tyler"><span>10</span><p>Tyler</p></div>
+                <div class="player" data-player="sonny"><span>18</span><p>Sonny</p></div>
+                <div class="player" data-player="joey"><span>14</span><p>Joey</p></div>
+            </div>
 
-                <article class="squad-details">
-                    <p class="squad-details__kicker">Player profile</p>
-                    <h3 id="squad-detail-name">Finley</h3>
-                    <dl id="squad-stat-list" class="squad-stats"></dl>
-                    <div class="squad-details__bio">
-                        <h4>About</h4>
-                        <p id="squad-player-bio"></p>
-                    </div>
-                </article>
+        </div>
+
+            <!-- Profile Cards -->
+            <div class="profile-overlay" id="profile-overlay">
+                <div class="profile-card" id="profile-card">
+                    <img src="" alt="" class="profile-img" />
+                    <h3 id="profile-name"></h3>
+                    <em id="profile-desc"></em>
+                    <p id="profile-bio"></p>
+                    <div class="stats" id="profile-stats"></div>
+                    <button class="close-profile">Close</button>
+                </div>
+            </div>
+
+            <div class="bio-overlay" id="bio-overlay">
+                <div class="bio-card">
+                    <h3 id="bio-name"></h3>
+                    <em id="bio-text"></em>
+                    <p id="bio-about-text"></p>
+                    <button class="close-bio">Close</button>
+                </div>
             </div>
         </section>
 

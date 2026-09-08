@@ -1,95 +1,242 @@
-const squadPlayers = [
-  { id: "finley", name: "Finley", number: "1", group: "gk", position: "Goalkeeper", image: "icons/finley-icon.png", appearances: 6, goals: 0, assists: 0, highlight: "37 saves", bio: "Finley joined Farringdon in 2023 and has developed into a confident goalkeeper with quick reflexes and strong leadership from the back." },
-  { id: "bradley", name: "Bradley", number: "8", group: "def", position: "Right Back", image: "icons/bradley-icon.png", appearances: 6, goals: 6, assists: 0, highlight: "1 Player of the Match", bio: "Bradley joined Farringdon late in the 2024/25 season and immediately showed the quality and experience he brings to the team." },
-  { id: "keaton", name: "Keaton", number: "4", group: "def", position: "Right Back / CDM", image: "icons/keaton-icon.png", appearances: 4, goals: 1, assists: 0, highlight: "1 Player of the Match", bio: "Keaton joined Farringdon for the 2024 Spring Cup and offers strength, determination and protection across the back line." },
-  { id: "jack", name: "Jack", number: "3", group: "def", position: "Defender", image: "assests/farringdon_crest.png", appearances: "—", goals: "—", assists: "—", highlight: "Squad player", bio: "A key member of the Farringdon defensive unit." },
-  { id: "ashton", name: "Ashton", number: "16", group: "def", position: "Defender", image: "assests/farringdon_crest.png", appearances: "—", goals: "—", assists: "—", highlight: "Squad player", bio: "A key member of the Farringdon defensive unit." },
-  { id: "james", name: "James", number: "11", group: "def", position: "Defender", image: "assests/farringdon_crest.png", appearances: "—", goals: "—", assists: "—", highlight: "Squad player", bio: "A key member of the Farringdon defensive unit." },
-  { id: "lucas", name: "Lucas", number: "6", group: "def", position: "Left Back", image: "assests/farringdon_crest.png", appearances: 6, goals: 0, assists: 0, highlight: "1 Player of the Match", bio: "Lucas gives 100% every matchday, combining pace and strength while continuing to improve week by week." },
-  { id: "joseph", name: "Joseph", number: "9", group: "mid", position: "Midfielder / Forward", image: "icons/joseph-icon.png", appearances: 5, goals: 0, assists: 0, highlight: "2 Parents’ Player awards", bio: "Joseph joined Farringdon in January 2025. His close control and creative skills make him a real challenge for defenders." },
-  { id: "lukey", name: "Lukey", number: "2", group: "mid", position: "Midfielder", image: "assests/farringdon_crest.png", appearances: "—", goals: "—", assists: "—", highlight: "Squad player", bio: "A hardworking member of the Farringdon midfield." },
-  { id: "joey", name: "Joey", number: "7", group: "mid", position: "Winger / Striker", image: "icons/joey-icon.png", appearances: 4, goals: 3, assists: 1, highlight: "1 Parents’ Player award", bio: "Joey brings experience, creativity and a goal threat across the forward line." },
-  { id: "tyler", name: "Tyler", number: "10", group: "mid", position: "Midfielder / Defender", image: "icons/tyler-icon.png", appearances: 6, goals: 1, assists: 0, highlight: "1 Player of the Match", bio: "Tyler has been with Farringdon since 2021, offering leadership, quality and experience across the team." },
-  { id: "louis", name: "Louis", number: "12", group: "fwd", position: "Forward", image: "assests/farringdon_crest.png", appearances: "—", goals: "—", assists: "—", highlight: "Squad player", bio: "A key member of the Farringdon forward line." },
-  { id: "kaiden", name: "Kaiden", number: "18", group: "fwd", position: "Forward", image: "assests/farringdon_crest.png", appearances: "—", goals: "—", assists: "—", highlight: "Squad player", bio: "A key member of the Farringdon forward line." }
-];
+const players = document.querySelectorAll('.player');
+const overlay = document.getElementById('profile-overlay');
+const card = document.getElementById('profile-card');
+const nameEl = document.getElementById('profile-name');
+const descEl = document.getElementById('profile-desc');
+const statsEl = document.getElementById('profile-stats');
+const bioEl = document.getElementById('profile-bio');
+const imgEl = document.querySelector('.profile-img');
+const closeBtn = document.querySelector('.close-profile');
 
-const roster = document.getElementById("squad-roster");
-const filters = document.querySelectorAll(".squad-filter");
-const image = document.getElementById("squad-player-image");
-const number = document.getElementById("squad-player-number");
-const position = document.getElementById("squad-player-position");
-const playerName = document.getElementById("squad-player-name");
-const detailName = document.getElementById("squad-detail-name");
-const statList = document.getElementById("squad-stat-list");
-const bio = document.getElementById("squad-player-bio");
-let selectedPlayer = squadPlayers[0];
-let activeFilter = "all";
+// Sample player data
+const playerData = {
+    finley: {
+        name: "#1 — Goalkeeper",
+        desc: "Quick reflexes and strong leadership from the back.",
+        bio: "Finley joined Farringdon back in 2023. His development as a keeper has been tremendous, pulling off some of the most unbelievable saves between the sticks has been reflected by his development. ",
+        img: "icons/finley-icon.png",
+        stats: {
+            Appearences: 6,
+            Assists: 0,
+            Saves: 37,
+            Cleansheets: 2,
+            "Man of the Match": 1,
+            "Parents’ Player": 1
+        }
+    },
 
-function renderProfile(player) {
-  selectedPlayer = player;
-  image.src = player.image;
-  image.alt = player.name;
-  number.textContent = player.number;
-  position.textContent = player.position;
-  playerName.textContent = player.name;
-  detailName.textContent = player.name;
-  bio.textContent = player.bio;
-  statList.innerHTML = [
-    ["Squad number", player.number],
-    ["Position", player.position],
-    ["Appearances", player.appearances],
-    ["Goals", player.goals],
-    ["Assists", player.assists],
-    ["Highlight", player.highlight]
-  ].map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("");
+    bradley: {
+        name: "#8 — Right Back",
+        desc: "Sharp instincts, brilliant defending and a powerful shot. Always a threat in the final third.",
+        bio: "Bradley joined Farringdon late into our 2024/25 Season. At the time our squad was rather full but as soon as he turned up for training hi's quality and experience proved he had something to offer to the team",
+        img:  "icons/bradley-icon.png",
+        stats: {
+            Appearences: 6,
+            Goals: 6,
+            Assists: 0,
+            "Man of the Match": 1,
+            "Parents’ Player": 1
+        }
+    },
 
-  document.querySelectorAll(".squad-player").forEach((button) => {
-    const isSelected = button.dataset.player === player.id;
-    button.classList.toggle("is-selected", isSelected);
-    button.setAttribute("aria-pressed", String(isSelected));
-  });
-}
+    keaton: {
+        name: "#4 — Right Back/CDM",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "Keaton joined Farringdon during the teams first season in the spring cup in 2024, he offers great strength in the backline and determination to protect his players",
+        img: "icons/keaton-icon.png",
+        stats: {
+            Appearences: 4,
+            Goals: 1,
+            Assists: 0,
+            "Man of the Match": 1,
+            "Parents’ Player": 0
+        }
+    },
 
-function renderRoster() {
-  const filteredPlayers = activeFilter === "all"
-    ? squadPlayers
-    : squadPlayers.filter((player) => player.group === activeFilter);
+    freddie: {
+        name: "#5 — Centre Back",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "Freddie joined Farringdon in 2024 for the spring cup, his transformation as a player is outstanding and has cemented himself as a solid centre back receiving high praise from many other teams. The gentle giant!",
+        img: "icons/freddie-icon.png",
+        stats: {
+            Appearences: 6,
+            Goals: 0,
+            Assists: 0,
+            "Man of the Match": 1,
+            "Parents’ Player": 1
+        }
+    },
 
-  roster.innerHTML = filteredPlayers.map((player) => `
-    <button class="squad-player ${player.id === selectedPlayer.id ? "is-selected" : ""}" type="button" data-player="${player.id}" aria-pressed="${player.id === selectedPlayer.id}">
-      <span class="squad-player__badge squad-player__badge--${player.group}">${player.group.toUpperCase()}</span>
-      <span class="squad-player__name"><strong>${player.number}.</strong> ${player.name}</span>
-      <span class="squad-player__arrow" aria-hidden="true">›</span>
-    </button>
-  `).join("");
+    oliver: {
+        name: "#11 — Left Back",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "Oliver joined Farringdon during the summer of 2024, he was a player with no previous team experience but as soon as he started playing he was a natural, he has been a solid left back for the team offering bags of pace and excelent tackles and bagged himself a few wonderous goals!",
+        img: "icons/oliver-icon.png",
+        stats: {
+            Appearences: 6,
+            Goals: 0,
+            Assists: 0,
+            "Man of the Match": 0,
+            "Parents’ Player": 0
+        }
+    },
 
-  roster.querySelectorAll(".squad-player").forEach((button) => {
-    button.addEventListener("click", () => {
-      const player = squadPlayers.find((item) => item.id === button.dataset.player);
-      if (player) renderProfile(player);
+    lucas: {
+        name: "#6 — Left Back",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "Lucas joined Farringdon midway through our 24/25 Season, There is something special about Lucas that shows on the pitch on a matchday, he will give 100% always, with lots of pace and strength his a solid option for leftback and multiple possitions this season, he is improving week-in week-out noticed by the coaches",
+        img: "icons/lucas-icon.png",
+        stats: {
+            Appearences: 6,
+            Goals: 0,
+            Assists: 0,
+            "Man of the Match": 1,
+            "Parents’ Player": 0
+        }
+    },
+
+    david: {
+        name: "#7 — Right Winger",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "David joined Farringdon at the start of our spring cup in 2023, David has improved massively as a player, his compsure and acuaracy getting the ball into the box from set peices to driving the ball into the final third gives the team a huge boost on a matchday.",
+        img: "icons/david-icon.png",
+        stats: {
+            Appearences: 6,
+            Goals: 2,
+            Assists: 1,
+            "Man of the Match": 0,
+            "Parents’ Player": 1
+        }
+    },
+
+    jensen: {
+        name: "#16 — Forward",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "Jensen has recently signed the team in September, Jensen works hard in training, and for what we have seen so far, he can pick out players with passing and has pottential for great development as a player to be moulded into his position in the team.",
+        img: "icons/jensen-icon.png",
+        stats: {
+            Appearences: 4,
+            Goals: 0,
+            Assists: 0,
+            "Man of the Match": 0,
+            "Parents’ Player": 0
+        }
+    },
+
+    joseph: {
+        name: "#12 — Left Winger/Forward",
+        desc: "Amazing skillks, ball control, a defenders nightmare.",
+        bio: "Our mini Messi, Joseph joined Farringdon in Janauary 2025, his a fantastic winger with plenty of skillfull tricks up his sleeve has proved to be a defenders nightmare, his a solid player who has developed rapidly over the months since he joined",
+        img: "icons/joseph-icon.png",
+        stats: {
+            Appearences: 5,
+            Goals: 0,
+            Assists: 0,
+            "Man of the Match": 0,
+            "Parents’ Player": 2
+        }
+    },
+
+    jenson: {
+        name: "#3 — CDM",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "Jenson joined Farringdon over the summer of 2025, he has become a solid central defensive midfielder for the squad, he works hard in training and also in a matchday will give 100%, Another player we can see becoming solid in the midfield with bags of development in training.",
+        img: "icons/jenson-icon.png",
+        stats: {
+            Appearences: 5,
+            Goals: 0,
+            Assists: 0,
+            "Man of the Match": 1,
+            "Parents’ Player": 0
+        }
+    },
+
+    dawson: {
+        name: "#9 — Striker/Right Winger",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "Dawson joined Farringdon during the summer of 2025, he has became a solid option across multiple positions wheter it be a striker or a winger Dawson can do a job on the pitch. He has great pace and a fantastic finish infront of goal,",
+        img: "icons/dawson-icon.png",
+        stats: {
+            Appearences: 5,
+            Goals: 1,
+            Assists: 0,
+            "Man of the Match": 0,
+            "Parents’ Player": 1
+        }
+    },
+
+    tyler: {
+        name: "#10 — Striker/Midfielder/Defender",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio:"Tyler has been at Farringdon since 2021, his devlopment has been fantastic, leadership on the pitch and quality and experience he offers to the team has helped bring players on into the team. With a few goals and assists last season he was nominated our parents player of the season",
+        img: "icons/tyler-icon.png",
+        stats: {
+            Appearences: 6,
+            Goals: 1,
+            Assists: 0,
+            "Man of the Match": 1,
+            "Parents’ Player": 1
+        }
+    },
+
+    sonny: {
+        name: "#18 — Striker",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "Sonny joined Farringdon at the start of the 2024/2025 Season, At the time the team were needing a goalscorer and Sonny was the answer, his composure, strength and finishing as a striker is quality. He was awarded Managers Player last season for his hard work ethic in training and on the pitch",
+        img:  "icons/sonny-icon.png", 
+        stats: {
+            Appearences: 4,
+            Goals: 0,
+            Assists: 1,
+            "Man of the Match": 0,
+            "Parents’ Player": 0
+        }
+    },
+
+    joey: {
+        name: "#14 — Winger/Striker",
+        desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
+        bio: "Joey has recently joined Farringdon for the 2025 season, he has bags of expereince as a winger/striker and proves to be a goalscorer and creative player ofering something unique to the squad.",
+        img: "icons/joey-icon.png",
+        stats: {
+            Appearences: 4,
+            Goals: 3,
+            Assists: 1,
+            "Man of the Match": 0,
+            "Parents’ Player": 1
+        }
+    },
+
+};
+players.forEach(player => {
+    player.addEventListener('click', () => {
+        const id = player.dataset.player;
+        const data = playerData[id];
+        if (!data) return;
+
+        nameEl.textContent = data.name;
+        bioEl.textContent = data.bio;
+        descEl.textContent = data.desc;
+        imgEl.src = data.img;
+        imgEl.alt = data.name;
+
+        statsEl.innerHTML = '';
+        for (let key in data.stats) {
+            statsEl.innerHTML += `<p><strong>${key}:</strong> ${data.stats[key]}</p>`;
+        }
+
+        overlay.classList.add('active');
     });
-  });
-}
-
-filters.forEach((filter) => {
-  filter.addEventListener("click", () => {
-    activeFilter = filter.dataset.filter;
-    filters.forEach((item) => {
-      const isActive = item === filter;
-      item.classList.toggle("is-active", isActive);
-      item.setAttribute("aria-selected", String(isActive));
-    });
-
-    const visiblePlayers = activeFilter === "all"
-      ? squadPlayers
-      : squadPlayers.filter((player) => player.group === activeFilter);
-    if (!visiblePlayers.some((player) => player.id === selectedPlayer.id)) {
-      renderProfile(visiblePlayers[0]);
-    }
-    renderRoster();
-  });
 });
 
-renderRoster();
-renderProfile(selectedPlayer);
+closeBtn.addEventListener('click', () => {
+    overlay.classList.remove('active');
+
+});
+
+closeBio.addEventListener('click', () => {
+    bioOverlay.classList.remove('active');
+});
+
+
+

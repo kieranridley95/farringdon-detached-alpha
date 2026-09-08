@@ -966,3 +966,289 @@ button {
         color: red;
         background-color: white;
     }
+
+
+/* Squad switcher */
+.squad-switcher {
+  max-width: 1480px;
+  margin: 42px auto 64px;
+  padding: 0 16px;
+}
+
+.squad-switcher__heading {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.squad-switcher__eyebrow,
+.squad-details__kicker {
+  margin: 0 0 6px;
+  color: var(--brand-red);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.squad-switcher__heading h2 {
+  margin: 0;
+  color: #18191c;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.squad-switcher__heading > p:last-child {
+  margin: 8px auto 0;
+  max-width: 58ch;
+  color: #555;
+}
+
+.squad-switcher__filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.squad-filter {
+  border: 1px solid #d9d9d9;
+  border-radius: 999px;
+  background: #fff;
+  color: #252525;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  padding: 10px 16px;
+}
+
+.squad-filter.is-active,
+.squad-filter:hover {
+  border-color: var(--brand-red);
+  background: var(--brand-red);
+  color: #fff;
+}
+
+.squad-switcher__layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(300px, 0.85fr) minmax(300px, 1fr);
+  min-height: 585px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #101114;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+}
+
+.squad-roster {
+  max-height: 585px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.squad-player {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;
+  min-height: 62px;
+  border: 0;
+  border-bottom: 1px solid #dedede;
+  background: transparent;
+  color: #191919;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px 16px;
+  text-align: left;
+}
+
+.squad-player:hover,
+.squad-player.is-selected {
+  background: #f1f1f1;
+}
+
+.squad-player.is-selected {
+  box-shadow: inset 5px 0 var(--brand-red);
+}
+
+.squad-player__badge {
+  min-width: 42px;
+  margin-right: 12px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 34px;
+  text-align: center;
+}
+
+.squad-player__badge--gk { background: #ef9b15; }
+.squad-player__badge--def { background: #188dcc; }
+.squad-player__badge--mid { background: #35a345; }
+.squad-player__badge--fwd { background: #dc2630; }
+
+.squad-player__name {
+  font-size: 0.98rem;
+}
+
+.squad-player__arrow {
+  color: var(--brand-red);
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.squad-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 585px;
+  overflow: hidden;
+  background: linear-gradient(0deg, rgba(0,0,0,.67), rgba(0,0,0,.04)), url("assests/team.jpg") center/cover;
+  color: #fff;
+  text-align: center;
+}
+
+.squad-feature__image-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  min-height: 360px;
+  padding: 24px 24px 0;
+}
+
+.squad-feature__image-wrap img {
+  width: min(100%, 290px);
+  height: 100%;
+  max-height: 410px;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 14px 12px rgba(0, 0, 0, 0.38));
+}
+
+.squad-feature__number {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  color: rgba(255,255,255,.88);
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 3px 14px rgba(0,0,0,.35);
+}
+
+.squad-feature__position {
+  margin: 0;
+  color: #ffe1e1;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.squad-feature h3 {
+  margin: 8px 16px 26px;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+}
+
+.squad-details {
+  min-height: 585px;
+  padding: 48px clamp(24px, 3vw, 48px);
+  background: linear-gradient(120deg, rgba(7,7,8,.87), rgba(7,7,8,.69)), url("assests/team.jpg") center/cover;
+  color: #fff;
+}
+
+.squad-details h3 {
+  margin: 0 0 24px;
+  color: #fff;
+  font-size: clamp(1.75rem, 3vw, 2.6rem);
+}
+
+.squad-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 20px;
+  margin: 0;
+}
+
+.squad-stats div {
+  border-bottom: 1px solid rgba(255,255,255,.22);
+  padding-bottom: 9px;
+}
+
+.squad-stats dt {
+  color: #ff4242;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.squad-stats dd {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.squad-details__bio {
+  margin-top: 30px;
+}
+
+.squad-details__bio h4 {
+  margin: 0 0 8px;
+  color: #ff4242;
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.squad-details__bio p {
+  margin: 0;
+  color: #f2f2f2;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .squad-switcher__layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .squad-details {
+    grid-column: 1 / -1;
+    min-height: auto;
+  }
+
+  .squad-roster {
+    max-height: 440px;
+  }
+
+  .squad-feature {
+    min-height: 440px;
+  }
+}
+
+@media (max-width: 610px) {
+  .squad-switcher {
+    padding: 0 10px;
+  }
+
+  .squad-switcher__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .squad-roster {
+    max-height: 370px;
+  }
+
+  .squad-feature {
+    min-height: 470px;
+  }
+
+  .squad-details {
+    grid-column: auto;
+    padding: 34px 24px;
+  }
+
+  .squad-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}

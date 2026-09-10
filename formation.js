@@ -110,7 +110,7 @@ const playerData = {
     },
 
     joseph: {
-        name: "#19 — Left Winger/Forward",
+        name: "#9 — Left Winger/Forward",
         desc: "Amazing skillks, ball control, a defenders nightmare.",
         bio: "Our mini Messi, Joseph joined Farringdon in Janauary 2025, his a fantastic winger with plenty of skillfull tricks up his sleeve has proved to be a defenders nightmare, his a solid player who has developed rapidly over the months since he joined",
         img: "icons/joseph-icon.png",
@@ -148,12 +148,13 @@ const playerData = {
             Assists: 1,
             "Man of the Match": 0,
             "Parents’ Player": 1
+            }
         },
 
     tyler: {
         name: "#10 — Striker/Midfielder/Defender",
         desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
-        bio:"Tyler has been at Farringdon since 2021. His development has been fantastic; his leadership on the pitch, and the quality and experience he offers the team, have helped bring players into the team. He earned manager's player of the season and most man of the match awards for the 2025/2026 season,
+        bio:"Tyler has been at Farringdon since 2021. His development has been fantastic; his leadership on the pitch, and the quality and experience he offers the team, have helped bring players into the team. He earned manager's player of the season and most man of the match awards for the 2025/2026 season",
         img: "icons/tyler-icon.png",
         stats: {
             Appearances: 1,
@@ -168,19 +169,20 @@ const playerData = {
         name: "#12 — Striker",
         desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
         bio: "Joey has recently joined Farringdon for the 2025 season, he has bags of expereince as a winger/striker and proves to be a goalscorer and creative player ofering something unique to the squad.",
-        img: "icons/kaiden-icon.png",
+        img: "icons/louis-icon.png",
         stats: {
             Appearances: 1,
             Goals: 0,
             Assists: 1,
             "Man of the Match": 1,
             "Parents’ Player": 0
+            }
         },
 
     kaiden: {
         name: "#18 — Striker",
         desc: "Sharp instincts and a powerful shot. Always a threat in the final third.",
-        bio: "Joey has recently joined Farringdon for the 2025 season, he has bags of expereince as a winger/striker and proves to be a goalscorer and creative player ofering something unique to the squad.",
+        bio: "Kaiden joined just before the end of our season in 2026",
         img: "icons/kaiden-icon.png",
         stats: {
             Appearances: 1,

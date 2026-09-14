@@ -506,7 +506,7 @@ header{
     gap: 1.5rem; /* space between players */
 }
 
-/*.player {
+.player {
     background: white;
     color: #111;
     border-radius: 50%;
@@ -525,25 +525,9 @@ header{
     transition: transform 0.2s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-**/
 
 
-.player {
-    background: #fff;
-    color: #111;
-    border-radius: var(--radius-md); /* Rounded square */
-    width: 140px;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 1rem;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+
 
 .player:hover {
         transform: scale(1.1);
@@ -559,21 +543,13 @@ header{
     margin-bottom: 0.5rem;
 }
 
-.player span {
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin-bottom: 0.3rem;
-}
 
-.player p {
-    font-size: 1rem;
-    margin: 0
 
-  /*.player span {
+  .player span {
         font-weight: bold;
         font-size: 1.2rem;
         display: block;
-    }*/
+    }
 
 /* Profile overlay */
 .profile-overlay {

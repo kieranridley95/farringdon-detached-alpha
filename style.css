@@ -966,3 +966,33 @@ button {
         color: red;
         background-color: white;
     }
+
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+}
+
+.slide {
+  display: flex;
+  min-width: 80%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  scroll-snap-align: start;
+}
+
+.slide-img {
+  width: 40%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.slide-text {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -968,39 +968,3 @@ button {
     }
 
 
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 20px;
-  padding: 10px;
-}
-
-.card {
-  display: flex;
-  min-width: 80%;
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  scroll-snap-align: start;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
-.card-img {
-  width: 40%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.card-text {
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-

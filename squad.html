@@ -55,28 +55,33 @@
             </div>
         </section>
 
-    <div class="carousel">
-  <div class="slide">
-    <img src="assessts/tyler-finley.jpg" class="slide-img">
+<div class="carousel">
+  <div class="card" onclick="openPlayer('Finley')">
+    <img src="finley.jpg" class="card-img">
 
-    <div class="slide-text">
-      <h2>Player Name</h2>
-      <p>Position: Midfielder</p>
-      <p>Goals: 3</p>
-      <p>Season: 2026–2027</p>
+    <div class="card-text">
+      <h2>Finley</h2>
+      <p>Goal Keeper</p>
+      <p>#1</p>
     </div>
   </div>
 
-  <div class="slide">
-    <img src="image2.jpg" class="slide-img">
+  <div class="card" onclick="openPlayer('Bradley')">
+    <img src="bradley.jpg" class="card-img">
 
-    <div class="slide-text">
-      <h2>Player Name</h2>
-      <p>Position: Defender</p>
-      <p>Appearances: 14</p>
+    <div class="card-text">
+      <h2>Bradley</h2>
+      <p>Defender</p>
+      <p>#8</p>
     </div>
   </div>
 </div>
+
+<script>
+  function openPlayer(name) {
+    alert("Open profile for " + name);
+  }
+</script>
 
 
 

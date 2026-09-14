@@ -506,12 +506,12 @@ header{
     gap: 1.5rem; /* space between players */
 }
 
-.player {
+/*.player {
     background: white;
     color: #111;
-    /*border-radius: 50%;
+    border-radius: 50%;
     width: 80px;  fixed size for better formation look 
-    height: 80px; **/
+    height: 80px;
     border-radius: var(--radius-md);
     width: 120px;
     height: 140px;
@@ -524,6 +524,25 @@ header{
     cursor: pointer;
     transition: transform 0.2s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+**/
+
+
+.player {
+    background: #fff;
+    color: #111;
+    border-radius: var(--radius-md); /* Rounded square */
+    width: 140px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .player:hover {

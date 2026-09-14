@@ -509,9 +509,13 @@ header{
 .player {
     background: white;
     color: #111;
-    border-radius: 50%;
-    width: 80px; /* fixed size for better formation look */
-    height: 80px;
+    /*border-radius: 50%;
+    width: 80px;  fixed size for better formation look 
+    height: 80px; **/
+    border-radius: var(--radius-md);
+    width: 120px;
+    height: 140px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;

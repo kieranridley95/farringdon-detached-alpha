@@ -1,7 +1,7 @@
 const reportMap = {
     reportvc: 'match-reports/velocity-cobras.txt',
     reportwwc: 'match-reports/washington-wildcats.txt',
-    reportwb: 'match-reports/washington-bayern-home.txt
+    reportwb: 'match-reports/washington-bayern-home.txt'
 
 };
 

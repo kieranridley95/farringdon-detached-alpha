@@ -507,7 +507,7 @@ header{
 }
 
 .player {
-    background: white;
+    background-image: url("player-cards/card-background.png");
     color: #111;
     border-radius: 50%;
     width: 80px;  fixed size for better formation look 

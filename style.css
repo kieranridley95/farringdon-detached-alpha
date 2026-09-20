@@ -506,6 +506,7 @@ header{
     gap: 1.5rem; /* space between players */
 }
 
+/**
 .player {
   background-image: url('player-cards/card-background.png');
   background-repeat: no-repeat;
@@ -523,7 +524,7 @@ header{
   cursor: pointer;
   transition: transform 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  /**
+  
     color: #111;
     border-radius: 50%;
     width: 80px;  fixed size for better formation look 
@@ -539,7 +540,7 @@ header{
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);**/
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .player:hover {
@@ -563,6 +564,82 @@ header{
         font-size: 1.2rem;
         display: block;
     }
+
+**/
+
+.player {
+  position: relative;
+  width: 220px;
+  height: 300px;
+  background: linear-gradient(180deg, #0a0f2c 0%, #1a1f3d 50%, #000 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.player:hover {
+  transform: translateY(-6px);
+}
+
+/* Player image */
+.player img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+/* Overlay gradient for depth */
+.player::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.8));
+}
+
+/* Player name */
+.player .name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Player number */
+.player .number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* Club logo or badge */
+.player .badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+}
+
+/* Sponsor text */
+.player .sponsor {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+/******************************************/
 
 /* Profile overlay */
 .profile-overlay {

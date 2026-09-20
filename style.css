@@ -500,10 +500,11 @@ header{
 }
 **/
 
+/**
 .row {
     display: flex;
-    justify-content: center; /* center players in each row */
-    gap: 1.5rem; /* space between players */
+    justify-content: center; center players in each row 
+    gap: 1.5rem;  space between players 
 }
 
 /**
@@ -979,87 +980,52 @@ header{
 
 
 
-
-/* Mobile tweaks */
 @media (max-width: 600px) {
-  .field {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+
+  .formation h2,
+  .formation h3 {
+    font-size: 1.2rem;
+  }
+
+  .row {
+    gap: 1rem;
+    margin: 1rem 0;
   }
 
   .player {
-    padding: 0.75rem;
-    font-size: 0.9rem;
+    width: 90px;
+    height: 110px;
+    padding: 0.3rem;
   }
 
-  .profile-card {
-    padding: 1.5rem;
+  .player .name {
+    font-size: 0.7rem;
+    top: 6px;
+    left: 6px;
+  }
+
+  .player .number {
+    font-size: 1rem;
+    top: 6px;
+    right: 6px;
+  }
+
+  .player .badge {
+    width: 22px;
+    bottom: 6px;
+    left: 6px;
+  }
+
+  .player .sponsor {
+    font-size: 0.6rem;
+    bottom: 6px;
+    right: 6px;
   }
 }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .btn { transition: none; }
-}
 
 
-/* Tablet adjustments */
-@media (max-width: 768px) {
-    .formation {
-        padding: 1.5rem 1rem;
-    }
 
-    .field {
-        gap: 1.5rem;
-    }
-
-    .row {
-        gap: 1rem;
-        flex-wrap: wrap; /* allows players to wrap if too many in a row */
-    }
-
-    .player {
-        width: 70px;
-        height: 70px;
-    }
-
-        .player span {
-            font-size: 1rem;
-        }
-
-        .player p {
-            font-size: 0.8rem;
-        }
-}
-
-/* Mobile adjustments */
-@media (max-width: 480px) {
-    .formation {
-        padding: 1rem 0.5rem;
-    }
-
-    .field {
-        gap: 1rem;
-    }
-
-    .row {
-        gap: 0.8rem;
-        flex-wrap: wrap; /* ensures players don’t overflow on small screens */
-    }
-
-    .player {
-        width: 60px;
-        height: 60px;
-        padding: 0.4rem;
-    }
-
-        .player span {
-            font-size: 0.9rem;
-        }
-
-        .player p {
-            font-size: 0.7rem;
-        }
-}
 /* Match Report Buttons */
 .report-buttons {
     text-align: center;

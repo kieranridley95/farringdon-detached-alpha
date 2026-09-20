@@ -591,8 +591,9 @@ header{
 .row {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;   /* forces wrapping on mobile */
   gap: 1.5rem;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
 }
 
 /* Player card styling */

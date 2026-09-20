@@ -982,14 +982,30 @@ header{
 
 @media (max-width: 600px) {
 
-  .formation h2,
+  .formation {
+    padding: 1rem;
+  }
+
+  .formation h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
   .formation h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.6rem;
+  }
+
+  .field {
+    padding: 1rem;
+    border-width: 3px;
   }
 
   .row {
-    gap: 1rem;
+    gap: 0.8rem;
     margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .player {
@@ -998,20 +1014,24 @@ header{
     padding: 0.3rem;
   }
 
+  .player img {
+    border-radius: 8px;
+  }
+
   .player .name {
     font-size: 0.7rem;
-    top: 6px;
+    top: 5px;
     left: 6px;
   }
 
   .player .number {
     font-size: 1rem;
-    top: 6px;
+    top: 5px;
     right: 6px;
   }
 
   .player .badge {
-    width: 22px;
+    width: 20px;
     bottom: 6px;
     left: 6px;
   }
@@ -1022,6 +1042,7 @@ header{
     right: 6px;
   }
 }
+
 
 
 

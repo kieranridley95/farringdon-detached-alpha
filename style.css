@@ -601,7 +601,6 @@ header{
   position: relative;
   width: 120px;
   height: 140px;
-  background-image: url("player-cards/card-background.png");
   background-size: cover;
   background-position: center;
   border-radius: 10px;

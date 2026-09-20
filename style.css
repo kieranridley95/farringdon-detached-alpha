@@ -480,8 +480,7 @@ header{
     margin: 0 auto 1rem;
     display: block;
 }
-
-
+/**
 .formation {
     background: #d10e00;
     background-size: cover;
@@ -495,10 +494,11 @@ header{
 .field {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* space between rows */
-    align-items: center; /* center rows horizontally */
+    gap: 2rem;
+    align-items: center; 
     margin-top: 2rem;
 }
+**/
 
 .row {
     display: flex;
@@ -566,6 +566,97 @@ header{
     }
 
 **/
+/* Formation section */
+.formation {
+  text-align: center;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #0a0f2c 0%, #1a1f3d 50%, #000 100%);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+/* Pitch background */
+.field {
+  background: radial-gradient(circle at center, #0b6623 0%, #064d17 100%);
+  border: 4px solid #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+/* Rows for each position group */
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Player card styling */
+.player {
+  position: relative;
+  width: 120px;
+  height: 140px;
+  background-image: url("player-cards/card-background.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.player:hover {
+  transform: scale(1.05);
+}
+
+/* Player image */
+.player img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Name and number overlay */
+.player .name {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.player .number {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+/* Badge and sponsor */
+.player .badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 30px;
+}
+
+.player .sponsor {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
 
 .player {
   position: relative;

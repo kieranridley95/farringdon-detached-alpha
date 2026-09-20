@@ -617,6 +617,8 @@ header{
 
 .player:hover {
   transform: scale(1.05);
+  background: linear-gradient(135deg, #ff1a1a 0%, #b30000 50%, #000000 100%);
+  color: white;
 }
 
 /* Player image */

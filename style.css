@@ -572,9 +572,33 @@ header{
   text-align: center;
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #0a0f2c 0%, #1a1f3d 50%, #000 100%);
   padding: 2rem;
   border-radius: 12px;
+}
+
+.formation {
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.15), transparent 60%),
+    linear-gradient(180deg, #ff0000, #000);
+  animation: glow 5s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    background:
+      radial-gradient(circle at top, rgba(255,255,255,0.15), transparent 60%),
+      linear-gradient(180deg, #ff0000, #000);
+  }
+  50% {
+    background:
+      radial-gradient(circle at top, rgba(255,255,255,0.3), transparent 60%),
+      linear-gradient(180deg, #b30000, #1a1a1a);
+  }
+  100% {
+    background:
+      radial-gradient(circle at top, rgba(255,255,255,0.15), transparent 60%),
+      linear-gradient(180deg, #ff0000, #000);
+  }
 }
 
 /* Pitch background */
